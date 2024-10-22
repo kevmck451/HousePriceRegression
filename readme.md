@@ -1,5 +1,5 @@
 # House Price Regression Project
-[Project Description Website](https://www.kaggle.com/competitions/ifsul-clube-de-ia-house-prices-regression/overview)
+
 
 ## Setup
 
