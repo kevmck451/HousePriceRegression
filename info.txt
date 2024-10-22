@@ -4,10 +4,14 @@
 Check Point 1 Instructions:
 
 Implement baseline model(s) and apply them to the test set
-Use "Late Submission" in Kaggle to submit the ".csv" file containing your prediction results on the test set. This CSV file should be named "YOURGROUPNAME-CKPT1.csv". You can find your group name in the Canvas (People/Groups). For example, for those students from "REG-04", they should name the CSV file as "REG-04-CKPT1.csv"
+Use "Late Submission" in Kaggle to submit the ".csv" file containing your prediction results on the test set.
+This CSV file should be named "YOURGROUPNAME-CKPT1.csv". You can find your group name in the Canvas (People/Groups).
+For example, for those students from "REG-04", they should name the CSV file as "REG-04-CKPT1.csv"
+
 What to submit in Canvas:
 Your final CSV file (.csv)
 Your final Python codes (.py or .zip if you have multiple .py files)
+
 The screenshot in Kaggle showing the name of your submitted CSV file and its corresponding scores
 Briefly describe your methods when you submit files in the comments, no more than one paragraph
 Remember to submit the files by clicking on "add another file" in Canvas, instead of submitting one zipped file or zipping all the files. It is required to use comment lines to give some annotations of the codes.
