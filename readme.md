@@ -16,3 +16,10 @@ pip install kaggle
 
 ```
 
+## First Example
+
+[Solution for Beginners](https://www.kaggle.com/code/akhileshthite/house-prices-solution-for-beginners)
+
+
+
+
