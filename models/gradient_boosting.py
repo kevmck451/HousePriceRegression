@@ -57,7 +57,7 @@ def gradient_boosting(num_principal_comps):
 if __name__ == '__main__':
     # num_principal_comps = 11
 
-    num_principal_comps = [x for x in range(3, 20)]
+    num_principal_comps = [x for x in range(8, 20)]
 
     for comp in num_principal_comps:
         gradient_boosting(
