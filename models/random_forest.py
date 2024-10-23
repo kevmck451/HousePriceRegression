@@ -8,8 +8,8 @@ from sklearn.decomposition import PCA
 import pandas as pd
 
 
-def model_template():
-
+def random_forrest_model(num_principal_comps, n_estimators, random_state):
+    # setup --------------------------------------------------------------
     dataset_train_filepath = '../data/train_clean.csv'
     dataset_test_filepath = '../data/test_clean.csv'
 
@@ -31,16 +31,12 @@ def model_template():
     X_train = sc.fit_transform(X_train)
     X_test = sc.transform(X_test)
 
-    # Output transformed data and target
-    # print(X_train)
-    # print(Y_train)
-
     # Principle Component Analysis
-    pca = PCA(n_components = 11)
+    pca = PCA(n_components = num_principal_comps)
     X_train = pca.fit_transform(X_train)
     X_test = pca.transform(X_test)
 
-    regressor = RandomForestRegressor(n_estimators = 200, random_state = 0)
+    regressor = RandomForestRegressor(n_estimators=n_estimators, random_state=random_state)
     regressor.fit(X_train, Y_train)
     Y_pred = regressor.predict(X_test)
 
@@ -53,10 +49,17 @@ def model_template():
 
 
 
+
 if __name__ == '__main__':
-    model_template()
 
+    num_principal_comps = 11
+    n_estimators = 200
+    random_state = 0
 
-
+    random_forrest_model(
+        num_principal_comps=num_principal_comps,
+        n_estimators=n_estimators,
+        random_state=random_state
+    )
 
 

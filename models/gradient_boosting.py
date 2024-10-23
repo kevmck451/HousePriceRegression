@@ -1,14 +1,17 @@
 
 from models.save_submission import save_submission
 
-from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import mean_squared_error
 from sklearn.decomposition import PCA
+
+from xgboost import XGBRegressor
 
 import pandas as pd
 
 
-def model_template():
+
+def gradient_boosting(num_principal_comps):
 
     dataset_train_filepath = '../data/train_clean.csv'
     dataset_test_filepath = '../data/test_clean.csv'
@@ -31,30 +34,36 @@ def model_template():
     X_train = sc.fit_transform(X_train)
     X_test = sc.transform(X_test)
 
-    # Output transformed data and target
-    # print(X_train)
-    # print(Y_train)
-
     # Principle Component Analysis
-    pca = PCA(n_components = 11)
+    pca = PCA(n_components = num_principal_comps)
     X_train = pca.fit_transform(X_train)
     X_test = pca.transform(X_test)
 
-    regressor = RandomForestRegressor(n_estimators = 200, random_state = 0)
+
+    regressor = XGBRegressor()
     regressor.fit(X_train, Y_train)
     Y_pred = regressor.predict(X_test)
 
     regressor.score(X_train, Y_train)
     score = round(regressor.score(X_train, Y_train) * 100, 2)
 
-    if score >= 98.05:
-        save_submission(test_df=test_df, Y_pred=Y_pred, score=score, name='RF')
+    print(score)
+
+    if score >= 99.96:
+        save_submission(test_df=test_df, Y_pred=Y_pred, score=score, name='GB')
 
 
 
 
 if __name__ == '__main__':
-    model_template()
+    # num_principal_comps = 11
+
+    num_principal_comps = [x for x in range(3, 20)]
+
+    for comp in num_principal_comps:
+        gradient_boosting(
+            num_principal_comps=comp
+        )
 
 
 
