@@ -2,7 +2,6 @@
 from models.save_submission import save_submission
 
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import mean_squared_error
 from sklearn.decomposition import PCA
 
 from xgboost import XGBRegressor
