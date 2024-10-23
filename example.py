@@ -14,7 +14,7 @@ import numpy as np
 
 # setup --------------------------------------------------------------
 dataset_train_filepath = 'data/og/train.csv'
-dataset_test_filepath = 'data/og/train.csv'
+dataset_test_filepath = 'data/og/test.csv'
 
 train_df = pd.read_csv(dataset_train_filepath)
 test_df = pd.read_csv(dataset_test_filepath)
