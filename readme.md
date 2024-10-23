@@ -31,10 +31,14 @@ pip install kaggle
     - model selection is the iterative process so get a modeling script up to start this process
 
 ### Possibilities
-- Linear Regression
-- Decision Trees
+
+#### Currently Implemented
 - Random Forest
 - Gradient Boosting Machines (GBM)
+
+#### Todo
+- Linear Regression
+- Decision Trees
 - Support Vector Regressor (SVR)
 - Neural Networks
 - XGBoost, LightGBM, etc.
