@@ -54,3 +54,11 @@ Provide options to save the trained models and predictions.
 
 
 
+## Work Flow
+- Use features / feature_extraction to investigate which features are most important for training
+- create a copy of model_template and name with method type
+- rename function inside of model_template and setup testing scripts inside __main__
+
+
+
+
