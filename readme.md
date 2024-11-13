@@ -67,3 +67,24 @@ Provide options to save the trained models and predictions.
 
 
 
+## Lab Server
+
+```zsh
+ssh kmcknze1@c2-kevin.uom.memphis.edu
+```
+```zsh
+cd HousePriceRegression
+tmux # allows you leave while it's running
+source venv/bin/activate
+git pull # if necessary
+python3 -m models.gradient_boosting_GS # or whatever model
+```
+- to exit and let it keep running
+- press ctr+b
+- press d (for detach)
+- now you can leave and it'll keep running
+- to go back in and check on it
+
+```zsh
+tmux attach
+```

@@ -1,4 +1,5 @@
 from models.save_submission import save_submission
+from models.load_data import load_data
 
 from sklearn.preprocessing import StandardScaler, PolynomialFeatures
 from sklearn.model_selection import GridSearchCV, KFold
@@ -9,12 +10,15 @@ import pathlib
 
 
 here = pathlib.Path(__file__)
+
 def gradient_boosting(params):
-    dataset_train_filepath = here.parent.parent/"data"/"train_clean.csv"#'../data/train_clean.csv'
+    dataset_train_filepath = here.parent.parent/"data"/"train_clean.csv"
     dataset_test_filepath = here.parent.parent/"data"/"test_clean.csv"
 
     train_df = pd.read_csv(dataset_train_filepath)
     test_df = pd.read_csv(dataset_test_filepath)
+
+    # train_df, test_df = load_data()
 
     X_train = train_df.drop("SalePrice", axis=1)
     Y_train = train_df["SalePrice"]
@@ -46,6 +50,11 @@ def gradient_boosting(params):
 
     best_model = grid_search.best_estimator_
     best_score = round(grid_search.best_score_ * 100, 2)
+
+    # Save best score and params to a text file
+    with open("best_score_params.txt", "w") as f:
+        f.write(f"Best Score: {best_score}\n")
+        f.write(f"Best Params: {grid_search.best_params_}\n")
 
     print(f"Best Score: {best_score}, Best Params: {grid_search.best_params_}")
 
