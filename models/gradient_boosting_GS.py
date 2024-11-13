@@ -5,10 +5,13 @@ from sklearn.model_selection import GridSearchCV, KFold
 from xgboost import XGBRegressor
 import pandas as pd
 import numpy as np
+import pathlib
 
+
+here = pathlib.Path(__file__)
 def gradient_boosting(params):
-    dataset_train_filepath = '../data/train_clean.csv'
-    dataset_test_filepath = '../data/test_clean.csv'
+    dataset_train_filepath = here.parent.parent/"data"/"train_clean.csv"#'../data/train_clean.csv'
+    dataset_test_filepath = here.parent.parent/"data"/"test_clean.csv"
 
     train_df = pd.read_csv(dataset_train_filepath)
     test_df = pd.read_csv(dataset_test_filepath)
