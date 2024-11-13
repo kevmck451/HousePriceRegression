@@ -1,4 +1,5 @@
-from models.save_submission import save_submission
+from .save_submission import save_submission
+
 from sklearn.preprocessing import StandardScaler, PolynomialFeatures
 from sklearn.model_selection import GridSearchCV, KFold
 from xgboost import XGBRegressor
