@@ -45,9 +45,10 @@ pip install kaggle
 
 
 
-### GPT Prompt to get started
+### Start
 
-I have preprocessed housing data split into training and testing sets (X_train, X_test, y_train, y_test). Please generate a Python script that will:
+I have preprocessed housing data split into training and testing sets (X_train, X_test, y_train, y_test).
+Python script that will:
 
 Train multiple regression models (e.g., Linear Regression, Random Forest, Gradient Boosting, XGBoost, and Neural Networks).
 Evaluate their performance using common metrics like Root Mean Squared Error (RMSE) or R² score.

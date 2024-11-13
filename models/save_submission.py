@@ -7,5 +7,5 @@ def save_submission(test_df, Y_pred, score, name):
             "SalePrice": Y_pred
         })
 
-    dataframe.to_csv(f'/submissions/{name}_{score}.csv', index=False)
+    dataframe.to_csv(f'submissions/{name}_{score}.csv', index=False)
 
