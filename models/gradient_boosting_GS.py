@@ -4,10 +4,13 @@ from sklearn.model_selection import GridSearchCV, KFold
 from xgboost import XGBRegressor
 import pandas as pd
 import numpy as np
+import pathlib
+
+here = pathlib.Path(__file__)
 
 def gradient_boosting(params):
-    dataset_train_filepath = '../data/train_clean.csv'
-    dataset_test_filepath = '../data/test_clean.csv'
+    dataset_train_filepath = here.parent.parent / "data" / "train_clean.csv"
+    dataset_test_filepath = here.parent.parent / "data" / "test_clean.csv"
 
     train_df = pd.read_csv(dataset_train_filepath)
     test_df = pd.read_csv(dataset_test_filepath)
@@ -64,8 +67,8 @@ if __name__ == '__main__':
         'colsample_bytree': [0.8, 0.9],
         'min_child_weight': [1, 3, 5],
         'gamma': [0, 0.1, 0.2],
-        'reg_alpha': [0.01, 0.1, 1],   # L1 regularization (for sparsity)
-        'reg_lambda': [0.01, 0.1, 1]   # L2 regularization (for weight reduction)
+        'reg_alpha': [0.01, 0.1, 1],  # L1 regularization (for sparsity)
+        'reg_lambda': [0.01, 0.1, 1]  # L2 regularization (for weight reduction)
     }
 
     gradient_boosting(params=param_grid)
