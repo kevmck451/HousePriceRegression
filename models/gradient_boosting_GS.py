@@ -54,7 +54,7 @@ def gradient_boosting(params):
 
     print(f"Best Score: {best_score}, Best Params: {best_params}")
 
-    if best_score >= 90.0:  # Adjust threshold as needed
+    if best_score >= 82.0:  # Adjust threshold as needed
         Y_pred = best_model.predict(X_test)
         save_submission(test_df=test_df, Y_pred=Y_pred, score=best_score, name='GB_Optimized_FE')
 
