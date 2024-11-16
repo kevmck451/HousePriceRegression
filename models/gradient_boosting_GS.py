@@ -54,19 +54,19 @@ def gradient_boosting(params):
 
     print(f"Best Score: {best_score}, Best Params: {best_params}")
 
-    if best_score >= 82.0:  # Adjust threshold as needed
-        Y_pred = best_model.predict(X_test)
-        save_submission(test_df=test_df, Y_pred=Y_pred, score=best_score, name='GB_Optimized_FE')
+    # if best_score >= 82.0:  # Adjust threshold as needed
+    Y_pred = best_model.predict(X_test)
+    save_submission(test_df=test_df, Y_pred=Y_pred, score=best_score, name=f'GB_{best_params}')
 
 if __name__ == '__main__':
     param_grid = {
         'n_estimators': [1000, 1500],  # Higher values for more trees
-        'learning_rate': [0.01, 0.05, 0.1],  # Lower learning rates for stable training
-        'max_depth': [4, 5, 6],
-        'subsample': [0.8, 0.9],
-        'colsample_bytree': [0.8, 0.9],
-        'min_child_weight': [1, 3, 5],
-        'gamma': [0, 0.1, 0.2],
+        'learning_rate': [0.1],  # Lower learning rates for stable training
+        'max_depth': [6],
+        'subsample': [0.9],
+        'colsample_bytree': [0.8],
+        'min_child_weight': [1],
+        'gamma': [0],
         'reg_alpha': [0.01, 0.1, 1],  # L1 regularization (for sparsity)
         'reg_lambda': [0.01, 0.1, 1]  # L2 regularization (for weight reduction)
     }
