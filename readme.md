@@ -45,19 +45,6 @@ pip install kaggle
 
 
 
-### Start
-
-I have preprocessed housing data split into training and testing sets (X_train, X_test, y_train, y_test).
-Python script that will:
-
-Train multiple regression models (e.g., Linear Regression, Random Forest, Gradient Boosting, XGBoost, and Neural Networks).
-Evaluate their performance using common metrics like Root Mean Squared Error (RMSE) or R² score.
-Include hyperparameter tuning for models using GridSearchCV or RandomizedSearchCV.
-Rank models based on performance and output the model with the best score.
-Optionally, visualize model performance using a bar chart.
-Provide options to save the trained models and predictions.
-
-
 
 ## Work Flow
 - Use features / feature_extraction to investigate which features are most important for training
